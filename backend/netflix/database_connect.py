@@ -17,6 +17,7 @@ def db_connect():
         conn.autocommit = True #Auto commit must be on if you want changes to be immediate for insert/update
         cur = conn.cursor()
         #cur.itersize = 10000
-    except:
+    except Exception,e:
+        print e
         print "[ERROR] couldn't connect to the database"
     return cur
